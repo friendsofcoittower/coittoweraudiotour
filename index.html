@@ -16,18 +16,15 @@
         if (!visitorId) {
             visitorId = 'user_' + Math.random().toString(36).substring(2, 15) + Date.now().toString(36);
             localStorage.setItem('uniqueVisitorId', visitorId);
-            persistRequestDataString ="https://script.google.com/macros/s/AKfycbycY_suAt_sVKmiXMMfak5CCI0L7hNcHFhejFqibh-n3seH6swZB2SopH4hwY4ss2OmWg/exec?uuid=" + visitorID;
-            fetch(persistRequestDataString) .then(response => {
-                if (!response.ok) throw new Error('Network error');
-                return response.json();
-              })
+            persistRequestDataStringURL ="https://script.google.com/macros/s/AKfycbycY_suAt_sVKmiXMMfak5CCI0L7hNcHFhejFqibh-n3seH6swZB2SopH4hwY4ss2OmWg/exec?uuid=" + visitorID;
+            fetch(persistRequestDataStringURL)
+  .then(response => {
+    if (!response.ok) throw new Error('Network error');
+    return response.json();
+  })
   .then(data => console.log(data))
   .catch(error => console.error('Error:', error));
-            https://script.google.com/macros/s/AKfycbycY_suAt_sVKmiXMMfak5CCI0L7hNcHFhejFqibh-n3seH6swZB2SopH4hwY4ss2OmWg/exec?uuid=ccss232&originURL=cncsm
-        }
 
-        // Show the ID in the console for testing
-        console.log('Visitor Unique ID:', visitorId);
     </script>
 
 </body>
