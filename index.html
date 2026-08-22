@@ -16,7 +16,7 @@
         if (!visitorId) {
             visitorId = 'user_' + Math.random().toString(36).substring(2, 15) + Date.now().toString(36);
             localStorage.setItem('uniqueVisitorId', visitorId);
-            persistRequestDataStringURL ="https://script.google.com/macros/s/AKfycbycY_suAt_sVKmiXMMfak5CCI0L7hNcHFhejFqibh-n3seH6swZB2SopH4hwY4ss2OmWg/exec?uuid=" + visitorID;
+            let persistRequestDataStringURL ="https://script.google.com/macros/s/AKfycbycY_suAt_sVKmiXMMfak5CCI0L7hNcHFhejFqibh-n3seH6swZB2SopH4hwY4ss2OmWg/exec?uuid=" + visitorID;
             fetch(persistRequestDataStringURL) .then(response => {
             if (!response.ok) throw new Error('Network error');
                 return response.json();
