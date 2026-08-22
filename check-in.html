@@ -1,1 +1,43 @@
+!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Unique Visitor ID</title>
+</head>
+<body>
 
+    <h1>Check-in Done</h1>
+
+    <script>
+        // Check if the ID already exists in localStorage
+        var visitorId = localStorage.getItem('uniqueVisitorId');
+
+        // If it does not exist, create a new one and save it
+        if (!visitorId) {
+            visitorId = 'user_' + Math.random().toString(36).substring(2, 15) + Date.now().toString(36);
+            localStorage.setItem('uniqueVisitorId', visitorId);
+        }
+        // --
+        const url = 'https://script.google.com/macros/s/AKfycbycY_suAt_sVKmiXMMfak5CCI0L7hNcHFhejFqibh-n3seH6swZB2SopH4hwY4ss2OmWg/exec';
+        const data = new URLSearchParams({
+              uuid: visitorId,
+              originURL: 'value2'
+        });
+
+        fetch(url, {
+        method: 'POST',
+          headers: {
+            'Content-Type': 'application/x-www-form-urlencoded'
+          },
+          body: data
+        })
+        .then(response => response.json())
+        .then(result => console.log(result))
+        .catch(error => console.error('Error:', error));
+
+        // --
+    </script>
+    <h1>After code to My Page</h1>
+
+</body>
+</html>
