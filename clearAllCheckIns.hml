@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>All Check-Ins Cleared</title>
+</head>
+<body>
+
+    <h1>Check-In Cleared</h1>
+
+    <script>
+        // Check if the ID already exists in localStorage
+        var visitorId = localStorage.getItem('uniqueVisitorId');
+        localStorage.removeItem(visitorId);
+
+    </script>
+
+</body>
+</html>
