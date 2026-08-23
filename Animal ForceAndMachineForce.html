@@ -6,69 +6,92 @@
 </head>
 <body>
     <p> </p>
-    <div class="audio-player">
-      <h3></h3>
+<div class="audio-player">
+  <h3>Custom Audio Player</h3>
   
-      <!-- Playback Buttons -->
-      <button id="playBtn">Play</button>
-      <button id="pauseBtn">Pause</button>
-        <!-- Progress Tracker -->
-        <div class="control-group">
-        <label for="progressBar">:</label>
-        <input type="range" id="progressBar" min="0" value="0" step="0.1">
-        <span id="timeDisplay">0:00 / 0:00</span>
-        </div>  
-      <!-- Volume Slider -->
-      <div class="control-group">
-        <label for="volumeSlider"></label>
-        <input type="range" id="volumeSlider" min="0" max="1" step="0.1" value="1">
-    </div>
+  <!-- Playback Buttons -->
+  <button id="playBtn">Play</button>
+  <button id="pauseBtn">Pause</button>
+  
+  <!-- Progress Tracker -->
+  <div class="control-group">
+    <label for="progressBar">Progress:</label>
+    <input type="range" id="progressBar" min="0" value="0" step="0.1">
+    <span id="timeDisplay">0:00 / 0:00</span>
+  </div>
+  
+  <!-- Volume Slider -->
+  <div class="control-group">
+    <label for="volumeSlider">Volume:</label>
+    <input type="range" id="volumeSlider" min="0" max="1" step="0.1" value="1">
+  </div>
+  
+  <!-- Loop Toggle -->
+  <div class="control-group">
+    <label>
+      <input type="checkbox" id="loopCheck"> Loop Audio
+    </label>
+  </div>
 </div>
 
   <script>
         // Check if the ID already exists in localStorage
         var visitorId = localStorage.getItem('uniqueVisitorId');
-        // Instantiate a new audio object directly in JS
-        // const audio = new Audio("Animal_Force_and_Machine_Force.mp3");
-        // Play the sound
-        //audio.play();   
 
-      const audio = new Audio("Animal_Force_and_Machine_Force.mp3");
-      const playBtn = document.getElementById("playBtn");
-      const pauseBtn = document.getElementById("pauseBtn");
-      const volumeSlider = document.getElementById("volumeSlider");
-      const loopCheck = document.getElementById("loopCheck");
-      const progressBar = document.getElementById("progressBar");
-      const timeDisplay = document.getElementById("timeDisplay");
-      // Helper function to format seconds into MM:SS format
-      function formatTime(seconds) {
-          if (isNaN(seconds)) return "0:00";
-          const mins = Math.floor(seconds / 60);
-          const secs = Math.floor(seconds % 60);
-          return `${mins}:${secs < 10 ? '0' : ''}${secs}`;
-      }
-      audio.addEventListener("loadedmetadata", () => {
-          progressBar.max = audio.duration; // Match slider length to audio track duration
-          timeDisplay.textContent = `0:00 / ${formatTime(audio.duration)}`;
-      });
-      // 4. Update progress bar and text dynamically during playback
-      audio.addEventListener("timeupdate", () => {
-          progressBar.value = audio.currentTime; // Move slider thumb to current time position
-          timeDisplay.textContent = `${formatTime(audio.currentTime)} / ${formatTime(audio.duration)}`;
-      });
-      // 5. Handle user seeking (Scrubbing / Clicking the progress bar)
-      progressBar.addEventListener("input", (event) => {
-          audio.currentTime = event.target.value; // Snap song position to user selection
-      });
+      // 1. Initialize the audio object
 
-      playBtn.addEventListener("click", () => {
-          audio.play().catch(error => {
-              console.log("Playback blocked. Interact with the page first!", error);
-          });
-      });
-      pauseBtn.addEventListener("click", () => {
-          audio.pause();
-      });
+       const audio = new Audio("Animal_Force_and_Machine_Force.mp3");
+
+// 2. Target all HTML control elements
+const playBtn = document.getElementById("playBtn");
+const pauseBtn = document.getElementById("pauseBtn");
+const volumeSlider = document.getElementById("volumeSlider");
+const loopCheck = document.getElementById("loopCheck");
+const progressBar = document.getElementById("progressBar");
+const timeDisplay = document.getElementById("timeDisplay");
+
+// Helper function to format seconds into MM:SS format
+function formatTime(seconds) {
+  if (isNaN(seconds)) return "0:00";
+  const mins = Math.floor(seconds / 60);
+  const secs = Math.floor(seconds % 60);
+  return `${mins}:${secs < 10 ? '0' : ''}${secs}`;
+}
+
+// 3. Configure progress bar dimensions once file metadata loads
+audio.addEventListener("loadedmetadata", () => {
+  progressBar.max = audio.duration; // Match slider length to audio track duration
+  timeDisplay.textContent = `0:00 / ${formatTime(audio.duration)}`;
+});
+
+// 4. Update progress bar and text dynamically during playback
+audio.addEventListener("timeupdate", () => {
+  progressBar.value = audio.currentTime; // Move slider thumb to current time position
+  timeDisplay.textContent = `${formatTime(audio.currentTime)} / ${formatTime(audio.duration)}`;
+});
+
+// 5. Handle user seeking (Scrubbing / Clicking the progress bar)
+progressBar.addEventListener("input", (event) => {
+  audio.currentTime = event.target.value; // Snap song position to user selection
+});
+
+// 6. Existing controls (Play, Pause, Volume, Loop)
+playBtn.addEventListener("click", () => {
+  audio.play().catch(err => console.log("Interaction required first", err));
+});
+
+pauseBtn.addEventListener("click", () => {
+  audio.pause();
+});
+
+volumeSlider.addEventListener("input", (event) => {
+  audio.volume = event.target.value; 
+});
+
+loopCheck.addEventListener("change", (event) => {
+  audio.loop = event.target.checked;
+});
+
 
 
     </script>
