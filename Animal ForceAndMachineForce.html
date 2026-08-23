@@ -5,14 +5,49 @@
     <title>Animal Force and Machine Force</title>
 </head>
 <body>
+    <div class="audio-player">
+      <h3>Custom Audio Player</h3>
+  
+      <!-- Playback Buttons -->
+      <button id="playBtn">Play</button>
+      <button id="pauseBtn">Pause</button>
+  
+      <!-- Volume Slider -->
+      <div class="control-group">
+        <label for="volumeSlider">Volume:</label>
+        <input type="range" id="volumeSlider" min="0" max="1" step="0.1" value="1">
+    </div>
+  
+      <!-- Loop Toggle -->
+      <div class="control-group">
+        <label>
+        <input type="checkbox" id="loopCheck"> Loop Audio
+        </label>
+      </div>
+    </div>
+
   <script>
         // Check if the ID already exists in localStorage
         var visitorId = localStorage.getItem('uniqueVisitorId');
         // Instantiate a new audio object directly in JS
-      const audio = new Audio("Animal_Force_and_Machine_Force.mp3");
+        // const audio = new Audio("Animal_Force_and_Machine_Force.mp3");
+        // Play the sound
+        //audio.play();   
 
-// Play the sound
-audio.play();   
+      const audio = new Audio("Animal_Force_and_Machine_Force.mp3");
+      const playBtn = document.getElementById("playBtn");
+      const pauseBtn = document.getElementById("pauseBtn");
+      const volumeSlider = document.getElementById("volumeSlider");
+      const loopCheck = document.getElementById("loopCheck");
+      playBtn.addEventListener("click", () => {
+          audio.play().catch(error => {
+              console.log("Playback blocked. Interact with the page first!", error);
+          });
+      });
+      pauseBtn.addEventListener("click", () => {
+          audio.pause();
+      });
+
 
     </script>
 
