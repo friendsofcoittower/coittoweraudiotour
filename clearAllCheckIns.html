@@ -12,24 +12,18 @@
         // Check if the ID already exists in localStorage
         var visitorId = localStorage.getItem('uniqueVisitorId');
         localStorage.clear();
-        // Target the existing container element
 
-// 1. Create the elements
-const cardDiv = document.createElement('div');
-const heading = document.createElement('h2');
-const paragraph = document.createElement('p');
+        // Write stuff on page
+        const cardDiv = document.createElement('div');
+        const heading = document.createElement('h2');
+        const paragraph = document.createElement('p');
+        cardDiv.className = 'card';
+        heading.textContent = '----';
+        paragraph.textContent = visitorID;
 
-// 2. Add attributes and text content
-cardDiv.className = 'card';
-heading.textContent = 'Hello World';
-paragraph.textContent = 'This HTML was built securely using DOM methods.';
-
-// 3. Nest the elements inside each other
-cardDiv.appendChild(heading);
-cardDiv.appendChild(paragraph);
-
-// 4. Inject the final element into the page
-document.getElementById('container').appendChild(cardDiv);
+        cardDiv.appendChild(heading);
+        cardDiv.appendChild(paragraph);
+        document.getElementById('container').appendChild(cardDiv);
 
 
     </script>
