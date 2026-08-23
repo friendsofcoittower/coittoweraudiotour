@@ -11,20 +11,6 @@
         // Check if the ID already exists in localStorage
         var visitorId = localStorage.getItem('uniqueVisitorId');
         localStorage.clear();
-
-        // Write stuff on page
-        const cardDiv = document.createElement('div');
-        const heading = document.createElement('h2');
-        const paragraph = document.createElement('p');
-        cardDiv.className = 'card';
-        heading.textContent = '----';
-        paragraph.textContent = 'VisitorID ==' + visitorID;
-
-        cardDiv.appendChild(heading);
-        cardDiv.appendChild(paragraph);
-        document.getElementById('container').appendChild(cardDiv);
-
-
     </script>
 
 </body>
