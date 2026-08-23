@@ -10,6 +10,22 @@
     <a href="check-in.html"> Check in</a><p>
     <a href="clearAllCheckIns.html"> clear all Check-ins</a><p>
     <a href="checkAuth.html"> Check auth and go to page</a><p>
+    <script>    
+        var visitorId = localStorage.getItem('uniqueVisitorId');
+        localStorage.clear();
+
+        // Write stuff on page
+        const cardDiv = document.createElement('div');
+        const heading = document.createElement('h2');
+        const paragraph = document.createElement('p');
+        cardDiv.className = 'card';
+        heading.textContent = '----';
+        paragraph.textContent = 'VisitorID ==' + visitorID;
+
+        cardDiv.appendChild(heading);
+        cardDiv.appendChild(paragraph);
+        document.getElementById('container').appendChild(cardDiv);
+    </script>   
 
 
 </body>
