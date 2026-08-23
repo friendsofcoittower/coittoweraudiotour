@@ -26,12 +26,7 @@
     <input type="range" id="volumeSlider" min="0" max="1" step="0.1" value="1">
   </div>
   
-  <!-- Loop Toggle -->
-  <div class="control-group">
-    <label>
-      <input type="checkbox" id="loopCheck"> Loop Audio
-    </label>
-  </div>
+  
 </div>
 
   <script>
@@ -46,7 +41,6 @@
 const playBtn = document.getElementById("playBtn");
 const pauseBtn = document.getElementById("pauseBtn");
 const volumeSlider = document.getElementById("volumeSlider");
-const loopCheck = document.getElementById("loopCheck");
 const progressBar = document.getElementById("progressBar");
 const timeDisplay = document.getElementById("timeDisplay");
 
@@ -88,9 +82,7 @@ volumeSlider.addEventListener("input", (event) => {
   audio.volume = event.target.value; 
 });
 
-loopCheck.addEventListener("change", (event) => {
-  audio.loop = event.target.checked;
-});
+
 
 
 
