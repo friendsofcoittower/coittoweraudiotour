@@ -6,26 +6,20 @@
 </head>
 <div id="container"></div>
 <body>
-    <script>    
-        var visitorId = localStorage.getItem('uniqueVisitorId');
-        // Write stuff on page
-        const cardDiv = document.createElement('div');
-        const heading = document.createElement('h2');
-        const paragraph = document.createElement('p');
-        cardDiv.className = 'card';
-        heading.textContent = '----';
-        paragraph.textContent = 'VisitorID ==' + visitorID;
-
-        cardDiv.appendChild(heading);
-        cardDiv.appendChild(paragraph);
-        document.getElementById('container').appendChild(cardDiv);
-    </script>   
-
     <h1>Testing</h1>
     <a href="check-in.html"> Check in</a><p>
     <a href="clearAllCheckIns.html"> Clear all Check-ins</a><p>
     <a href="checkAuth.html"> Check auth and go to page</a><p>
 
+    <script>    
+        var visitorId = localStorage.getItem('uniqueVisitorId');
+        // Write stuff on page
+        const container = document.getElementById('container');
+
+        const newElement = '<p>This is added to the end of the container.</p>';
+
+        // Positions: 'beforebegin', 'afterbegin', 'beforeend', 'afterend'
+    container.insertAdjacentHTML('beforeend', newElement);    </script>   
 
 </body>
 </html>
