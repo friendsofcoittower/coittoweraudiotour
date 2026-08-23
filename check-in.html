@@ -17,19 +17,7 @@
             visitorId = 'user_' + Math.random().toString(36).substring(2, 15) + Date.now().toString(36);
             localStorage.setItem('uniqueVisitorId', visitorId);
         }
-/*
-        // Write stuff on page
-        const cardDiv = document.createElement('div');
-        const heading = document.createElement('h2');
-        const paragraph = document.createElement('p');
-        cardDiv.className = 'card';
-        heading.textContent = '----';
-        paragraph.textContent = 'VisitorID ==' + visitorID;
 
-        cardDiv.appendChild(heading);
-        cardDiv.appendChild(paragraph);
-        document.getElementById('container').appendChild(cardDiv);
-*/
         // --
         const url = 'https://script.google.com/macros/s/AKfycbycY_suAt_sVKmiXMMfak5CCI0L7hNcHFhejFqibh-n3seH6swZB2SopH4hwY4ss2OmWg/exec';
         const data = new URLSearchParams({
