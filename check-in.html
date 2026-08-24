@@ -15,7 +15,7 @@
         var checkInDate = new Date();
         var tourEnds = new Date();
         var durationOfTourInSeconds = 30;
-        tourEnds.setMinutes(date.getSeconds() + durationOfTourInSceonds);     
+        tourEnds.setSeconds(date.getSeconds() + durationOfTourInSeconds);     
         localStorage.setItem('tourEnds', Math.floor(tourEnds));
         console.log("Enter time comparison, tourEnds = " + localStorage.getItem('tourEnds'));
         
