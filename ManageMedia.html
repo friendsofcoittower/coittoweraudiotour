@@ -32,7 +32,16 @@
     
         // Check if the ID already exists in localStorage
       var visitorId = localStorage.getItem('uniqueVisitorId');
-      const audio = new Audio("Animal_Force_and_Machine_Force.mp3");
+      // Get the query string from the URL
+      const queryString = window.location.search;
+      // Parse the parameters safely
+      const urlParams = new URLSearchParams(queryString);
+      // Get a specific value (automatically decoded)
+      const selectedMedia = urlParams.get('selectedMedia'); 
+
+       const audio = new Audio(selectedMedia + ".mp3");      
+
+      // const audio = new Audio("Animal_Force_and_Machine_Force.mp3");
       const playBtn = document.getElementById("playBtn");
       const pauseBtn = document.getElementById("pauseBtn");
       const volumeSlider = document.getElementById("volumeSlider");
