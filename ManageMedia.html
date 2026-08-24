@@ -88,6 +88,10 @@
       var now = new Date();
       console.log("Enter time comparison, now = " + now.getTime());
       console.log("Enter time comparison, tourEnds = " + tourEnds);
+
+      console.log("Enter time comparison, now = " + Date(Number(now.getTime())));
+      console.log("Enter time comparison, tourEnds = " +  Date(Number(tourEnds)));
+       
       if (tourEnds > now.getTime()) {
         console.log("Tour has expired")
         // window.location.replace("TourExpired.html");
