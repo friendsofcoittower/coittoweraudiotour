@@ -7,7 +7,8 @@
 </head>
 <body>
 
-    <h1>Check-In Done</h1>
+    <h1>Check-In Succesful</h1>
+    <div id="text-container"></div>
 
     <script>
         // Check if the ID already exists in localStorage
@@ -45,6 +46,10 @@
 
 
         // --
+        const htmlTarget = document.getElementById('html-container');
+        htmlTarget.innerHTML = 'You can use the tour until ' + localStorage.getItem('tourEnds')' + '<p>';
+        htmlTarget.innerHTML = 'Your unique Visitor ID for this tour is ' + localStorage.getItem('visitorID')' + '<p>';
+
     </script>
 
 </body>
