@@ -33,7 +33,6 @@
     
         // Check if the ID already exists in localStorage
       var visitorId = localStorage.getItem('uniqueVisitorId');
-      var tourEnds = localStorage.getItem('tourEnds');
       // Get the query string from the URL
       const queryString = window.location.search;
       // Parse the parameters safely
@@ -86,6 +85,9 @@
         window.location.replace("NotAuth.html");
       }
       var now = new Date();
+      var tourEnds = localStorage.getItem('tourEnds');
+      
+      console.log("Enter 1");
       console.log("Enter time comparison, now = " + now.getTime());
       console.log("Enter time comparison, tourEnds = " + tourEnds);
 
