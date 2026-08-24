@@ -19,6 +19,9 @@
         tourEnds.setMinutes(date.getSeconds() + durationOfTourInSceonds);     
         localStorage.setItem('tourEnds', Math.floor(tourEnds));
         console.log("Enter time comparison, tourEnds = " + localStorage.getItem('tourEnds'));
+        
+        localStorage.setItem('tourStarted', Math.floor(checkInDateString));
+        console.log("Enter time comparison, tourStarted = " + localStorage.getItem('checkInDateString'));
 
         var visitorId = localStorage.getItem('uniqueVisitorId');
         // If it does not exist, create a new one and save it
