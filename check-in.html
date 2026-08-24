@@ -13,7 +13,7 @@
         // Check if the ID already exists in localStorage
         var tourEnds = new Date();
         var date = new Date();
-        tourEnds.setMinutes(date.getMinutes() + 1);     
+        tourEnds.setMinutes(date.getSeconds() + 10);     
         localStorage.setItem('tourEnds', Math.floor(tourEnds));
         console.log("Enter time comparison, tourEnds = " + localStorage.getItem('tourEnds'));
 
