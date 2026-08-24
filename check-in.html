@@ -15,7 +15,7 @@
         var tourEnds = new Date();
         var date = new Date();
         tourEnds.setMinutes(date.getSeconds() + 10);     
-        localStorage.setItem('tourEnds', Math.floor(tourEnds));
+        localStorage.setItem('tourEnds', Math.floor(date));
         console.log("Enter time comparison, tourEnds = " + localStorage.getItem('tourEnds'));
 
         var visitorId = localStorage.getItem('uniqueVisitorId');
