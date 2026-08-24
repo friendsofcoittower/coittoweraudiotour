@@ -14,7 +14,7 @@
         var tourEnds = new Date();
         var date = new Date();
         tourEnds.setMinutes(date.getMinutes() + 1);     
-        localStorage.setItem('tourEnds', Math.floor(tourEnds() / 1000));
+        localStorage.setItem('tourEnds', Math.floor(tourEnds) / 1000));
         
         var visitorId = localStorage.getItem('uniqueVisitorId');
         // If it does not exist, create a new one and save it
