@@ -71,7 +71,9 @@
       volumeSlider.addEventListener("input", (event) => {
         audio.volume = event.target.value; 
       });
-
+      if (visitorId==NULL) {
+        window.location.replace("NotAuth.html");
+      }
     </script>
 
 </body>
