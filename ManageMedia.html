@@ -86,7 +86,7 @@
         window.location.replace("NotAuth.html");
       }
       var now = new Date();
-      console.log("Enter time comparison" + tourEnds);
+      console.log("Enter time comparison" + tourEnds.toLocaleString());
       if (Temporal.PlainDateTime.compare(tourEnds, now)) {
         console.log("Tour has expired")
         window.location.replace("TourExpired.html");
