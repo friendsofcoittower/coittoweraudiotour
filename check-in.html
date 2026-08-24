@@ -54,8 +54,8 @@
         htmlTarget.innerHTML = 'You can use the tour until ' + Date(Number(localStorage.getItem('tourEnds'))) + '<p>(TimeStamp: ' + localStorage.getItem('tourEnds') + ')' + '<p>' +
                                ' The tour currently is set up to expire after ' + durationOfTourInSceonds + ' seconds ' +
                                 'and the check-in time was ' + Date(Number(localStorage.getItem('checkInDate'))) + '<p>(TimeStamp: ' + localStorage.getItem('checkInDate') + ')' + '<p>' +  
-                                'You have ' + (localStorage.getItem('tourEnds') - localStorage.getItem('checkInDate') + 'seconds left in the tour<p>' +
-                               'Your unique Visitor ID for this tour is ' + localStorage.getItem('uniqueVisitorId') + '<p>';
+                                'You have ' + (localStorage.getItem('tourEnds') - localStorage.getItem('checkInDate')) + 'seconds left in the tour<p>' +
+                                'Your unique Visitor ID for this tour is ' + localStorage.getItem('uniqueVisitorId') + '<p>';
 
     </script>
 
