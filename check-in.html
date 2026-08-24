@@ -10,19 +10,20 @@
 
     <script>
         // Check if the ID already exists in localStorage
+        const now = new Date();
+        localStorage.setItem('tourStarted', now);
         var visitorId = localStorage.getItem('uniqueVisitorId');
-
         // If it does not exist, create a new one and save it
         if (!visitorId) {
             visitorId = 'user_' + Math.random().toString(36).substring(2, 15) + Date.now().toString(36);
             localStorage.setItem('uniqueVisitorId', visitorId);
         }
-
+        
         // --
         const url = 'https://script.google.com/macros/s/AKfycbycY_suAt_sVKmiXMMfak5CCI0L7hNcHFhejFqibh-n3seH6swZB2SopH4hwY4ss2OmWg/exec';
         const data = new URLSearchParams({
               uuid: visitorId,
-              originURL: 'value2'
+              checkInTime: tourStarted
         });
 
         fetch(url, {
