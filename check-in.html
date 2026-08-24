@@ -13,8 +13,8 @@
     <script>
         // Check if the ID already exists in localStorage
         var tourEnds = new Date();
-        var date = new Date();
-        var checkInDateString = date.toString();
+       // var date = new Date();
+        var checkInDate = new Date();
         var durationOfTourInSceonds = 30;
         tourEnds.setMinutes(date.getSeconds() + durationOfTourInSceonds);     
         localStorage.setItem('tourEnds', Math.floor(tourEnds));
