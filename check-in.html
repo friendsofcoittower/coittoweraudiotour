@@ -11,6 +11,7 @@
     <script>
         // Check if the ID already exists in localStorage
         var tourEnds = new Date();
+        var date = new Date();
         tourEnds.setMinutes(date.getMinutes() + 1);
 
         localStorage.setItem('tourEnds', tourEnds);
