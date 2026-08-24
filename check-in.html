@@ -10,8 +10,8 @@
 
     <script>
         // Check if the ID already exists in localStorage
-        const now = new Date();
-        localStorage.setItem('tourStarted', now);
+        const tourStarted = new Date();
+        localStorage.setItem('tourStarted', tourStarted);
         var visitorId = localStorage.getItem('uniqueVisitorId');
         // If it does not exist, create a new one and save it
         if (!visitorId) {
