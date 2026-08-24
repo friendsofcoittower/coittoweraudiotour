@@ -85,9 +85,14 @@
         window.location.replace("NotAuth.html");
       }
       var now = new Date();
+      console.log("Enter time comparison");
       if (tourEnds < now) {
+        console.log("Tour has expired")
         window.location.replace("TourExpired.html");
+      } else {
+                console.log("Tour is ongoing");
       }
+
     </script>
 
 </body>
