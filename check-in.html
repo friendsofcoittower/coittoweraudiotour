@@ -48,7 +48,9 @@
 
         // --
         const htmlTarget = document.getElementById('html-container');
-        htmlTarget.innerHTML = 'You can use the tour until ' + Date(Number(localStorage.getItem('tourEnds'))) + ' since the tour is set up to expire after ' + durationOfTourInSceonds + ' seconds <p>' +
+        htmlTarget.innerHTML = 'You can use the tour until ' + Date(Number(localStorage.getItem('tourEnds'))) + 
+                               ' since the tour is set up to expire after ' + durationOfTourInSceonds + ' seconds ' +
+                                'and the check-in time was ' date + ' <p>' +
             
                                'Your unique Visitor ID for this tour is ' + localStorage.getItem('uniqueVisitorId') + '<p>';
 
