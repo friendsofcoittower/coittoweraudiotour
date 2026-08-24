@@ -10,7 +10,7 @@
 
     <script>
         // Check if the ID already exists in localStorage
-        const tourStarted = new Date();
+        var tourStarted = new Date();
         localStorage.setItem('tourStarted', tourStarted);
         var visitorId = localStorage.getItem('uniqueVisitorId');
         // If it does not exist, create a new one and save it
@@ -23,7 +23,7 @@
         const url = 'https://script.google.com/macros/s/AKfycbycY_suAt_sVKmiXMMfak5CCI0L7hNcHFhejFqibh-n3seH6swZB2SopH4hwY4ss2OmWg/exec';
         const data = new URLSearchParams({
               uuid: visitorId,
-              checkInTime: tourStarted
+              checkInTime: tourStarted.toISOString()
         });
 
         fetch(url, {
