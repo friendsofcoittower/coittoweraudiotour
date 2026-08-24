@@ -86,7 +86,7 @@
         window.location.replace("NotAuth.html");
       }
       var now = new Date();
-      console.log("Enter time comparison" + tourEnds.toISOString());
+      console.log("Enter time comparison" + now.toISOString());
       if (Temporal.Instant.compare(tourEnds.toISOString(), now.toISOString())) {
         console.log("Tour has expired")
         window.location.replace("TourExpired.html");
