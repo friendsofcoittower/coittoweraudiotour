@@ -32,7 +32,7 @@
     
         // Check if the ID already exists in localStorage
       var visitorId = localStorage.getItem('uniqueVisitorId');
-      var tourStarted = localStorage.getItem('uniqueVisitorId');
+      var tourStarted = localStorage.getItem('tourStarted');
       // Get the query string from the URL
       const queryString = window.location.search;
       // Parse the parameters safely
@@ -83,6 +83,9 @@
       });
       if (visitorId == null) {
         window.location.replace("NotAuth.html");
+      }
+      if (tourStarted.getTime() < Date().getTime()) {
+        window.location.replace("TourExpired.html");
       }
     </script>
 
