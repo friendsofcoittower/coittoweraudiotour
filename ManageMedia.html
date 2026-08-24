@@ -87,7 +87,7 @@
       }
       var now = new Date();
       console.log("Enter time comparison, now = " + now.getTime());
-      console.log("Enter time comparison, tourEnds = " + tourEnds.getTime());
+      console.log("Enter time comparison, tourEnds = " + tourEnds());
       if (Temporal.Instant.compare(tourEnds.getTim(), now.getTime())) {
         console.log("Tour has expired")
         window.location.replace("TourExpired.html");
