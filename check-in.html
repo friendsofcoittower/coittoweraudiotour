@@ -13,15 +13,12 @@
     <script>
         var date = new Date();
         var checkInDate = new Date();
-        var tourEnds = new Date();
-        var durationOfTourInSeconds = 30;
-        tourEnds.setSeconds(date.getSeconds() + durationOfTourInSeconds);     
-        localStorage.setItem('tourEnds', Math.floor(tourEnds));
-        console.log("Enter time comparison, tourEnds = " + localStorage.getItem('tourEnds'));
         
+        var durationOfTourInSeconds = 30;
+        var tourEnds = new Date(checkInDate);
+        tourEnds.setSeconds(checkInDate.getSeconds() + durationOfTourInSeconds);
+        localStorage.setItem('tourEnds', Math.floor(tourEnds));        
         localStorage.setItem('checkInDate', Math.floor(checkInDate));
-        console.log("Enter time comparison, tourStarted = " + localStorage.getItem('checkInDate'));
-
         var visitorId = localStorage.getItem('uniqueVisitorId');
         // If it does not exist, create a new one and save it
         if (!visitorId) {
@@ -53,7 +50,7 @@
         const htmlTarget = document.getElementById('html-container');
         htmlTarget.innerHTML = ' The tour currently is set up to expire after ' + durationOfTourInSeconds + ' seconds ' + '<p>' +
                                 'Your time of check-in was ' + Date(Number(localStorage.getItem('checkInDate'))) + '<p>' +  
-                                'You can use the tour until ' + Date(Number(localStorage.getItem('checkInDate'))) + '<p>' +
+                                'You can use the tour until ' + Date(Number(localStorage.getItem('tourEnds'))) + '<p>' +
                                 'Your unique Visitor ID for this tour is ' + localStorage.getItem('uniqueVisitorId') + durationOfTourInSeconds + '<p>';
 
     </script>
