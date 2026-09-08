@@ -48,10 +48,10 @@
 
         // --
         const htmlTarget = document.getElementById('html-container');
-        htmlTarget.innerHTML = ' The tour currently is set up to expire after ' + durationOfTourInSeconds + ' seconds ' + '<p>' +
+        htmlTarget.innerHTML =  'Your unique Visitor ID for this tour is ' + localStorage.getItem('uniqueVisitorId') + durationOfTourInSeconds + '<p>' +
+                                'The tour currently is set up to expire after ' + durationOfTourInSeconds + ' seconds ' + '<p>' +
                                 'Your time of check-in was ' + Date(Number(localStorage.getItem('checkInDate'))) + '<p>' +  
-                                'You can use the tour until ' + Date(Number(localStorage.getItem('tourEnds'))) + '<p>' +
-                                'Your unique Visitor ID for this tour is ' + localStorage.getItem('uniqueVisitorId') + durationOfTourInSeconds + '<p>';
+                                'You can use the tour until ' + Date(Number(localStorage.getItem('tourEnds'))) + '<p>';
 
     </script>
 
