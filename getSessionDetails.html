@@ -19,9 +19,9 @@
         const checkInDateObj = new Date(checkInDate);
     
         const htmlTarget = document.getElementById('html-container');
-        htmlTarget.innerHTML =  'Your unique Visitor ID for this tour is ' + visitorId + '<p>' +
-                                'Start ' +  checkInDateObj  + '<p>' +
-                                'End ' +  tourEndsObj  + '<p>';
+        htmlTarget.innerHTML =  'Your Visitor ID for this tour is ' + visitorId + '<p>' +
+                                'Start ' +  checkInDateObj.toLocaleDateString()  + '<p>' +
+                                'End ' +  tourEndsObj.toLocaleDateString()  + '<p>';
            
     </script>
 
