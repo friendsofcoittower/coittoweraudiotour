@@ -16,6 +16,7 @@
         
         var durationOfTourInSeconds = 30;
         var tourEnds = new Date(checkInDate);
+
         tourEnds.setSeconds(checkInDate.getSeconds() + durationOfTourInSeconds);
         localStorage.setItem('tourEnds', Math.floor(tourEnds));        
         localStorage.setItem('checkInDate', Math.floor(checkInDate));
@@ -50,8 +51,12 @@
         const htmlTarget = document.getElementById('html-container');
         htmlTarget.innerHTML =  'Your unique Visitor ID for this tour is ' + localStorage.getItem('uniqueVisitorId') + durationOfTourInSeconds + '<p>' +
                                 'The tour currently is set up to expire after ' + durationOfTourInSeconds + ' seconds ' + '<p>' +
-                                'Your time of check-in was ' + Date(Number(localStorage.getItem('checkInDate'))) + '<p>' +  
-                                'You can use the tour until ' + Date(Number(localStorage.getItem('tourEnds'))) + '<p>';
+                                'Start ' +  checkInDate  + '<p>' +
+                                'End ' +  tourEnds  + '<p>';
+           
+            
+            //'Your time of check-in was ' + Date(Number(localStorage.getItem('checkInDate'))) + '<p>' +  
+            //                    'You can use the tour until ' + Date(Number(localStorage.getItem('tourEnds'))) + '<p>';
 
     </script>
 
